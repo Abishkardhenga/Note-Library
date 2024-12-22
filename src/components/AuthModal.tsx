@@ -4,8 +4,9 @@ import { useAuth } from "../context/AuthContext"
 import useOtpHandler from "../hooks/useOtpHandler"
 import OTPVerification from "./auth/OTPVerification"
 import { useNavigate, useRoutes } from "react-router-dom"
-import { updateDoc, doc } from "firebase/firestore"
-import { db} from "../lib/firebase"
+import { updateDoc, doc, getDoc } from "firebase/firestore"
+import { db } from "../lib/firebase"
+import toast from "react-hot-toast"
 interface AuthModalProps {
   isOpen: boolean
   onClose: () => void
@@ -22,9 +23,9 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false)
   const { sendOtp, verifyOtp, isSending, isOtpSent } = useOtpHandler() // Use OTP hook
   const [isOtpVerifying, setIsOtpVerifying] = useState(false)
-const  { user} = useAuth()
+  const { user } = useAuth()
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!isOpen) {
@@ -35,18 +36,6 @@ const navigate = useNavigate()
       setIsLoading(false)
     }
   }, [isOpen])
-
-  const emailVerified = async () => {
-    try {
-      const userDocRef = doc(db, "users", user?.id!) // Ensure user.id is a valid string
-      await updateDoc(userDocRef, { emailVerified: true })
-      console.log("Email verified successfully")
-    } catch (error) {
-      console.log("error",error)
-      
-    }
-      
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -63,7 +52,6 @@ const navigate = useNavigate()
         ) // Send OTP
         navigate("/otpverify")
         setIsOtpVerifying(true)
-        
       } else {
         await signInWithEmail(email, password)
       }
@@ -81,12 +69,33 @@ const navigate = useNavigate()
     setIsLoading(true)
 
     try {
-      await signInWithGoogle()
-      await emailVerified()
-      
+      const googlesigninuser = await signInWithGoogle()
+      console.log("Google sign-in user:", googlesigninuser)
+
+      if (!googlesigninuser || !googlesigninuser.id) {
+        toast.error("Invalid user data from Google sign-in.")
+        return
+      }
+
+      const userDocRef = doc(db, "users", googlesigninuser.id)
+      const userSnapshot = await getDoc(userDocRef)
+
+      if (!userSnapshot.exists()) {
+        console.log("User document does not exist. Creating a new one...")
+        await updateDoc(userDocRef, {
+          email: googlesigninuser.email,
+          emailVerified: true,
+          createdAt: new Date(),
+        })
+      } else {
+        await updateDoc(userDocRef, { emailVerified: true })
+      }
+
+      navigate("/onboarding")
       onClose()
     } catch (err: any) {
       setError(err.message)
+      console.error("Error during Google sign-in:", err)
     } finally {
       setIsLoading(false)
     }
@@ -97,9 +106,7 @@ const navigate = useNavigate()
   return (
     <>
       {isOtpVerifying ? (
-        <OTPVerification
-         
-        />
+        <OTPVerification />
       ) : (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
           <div
