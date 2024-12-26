@@ -95,7 +95,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_1',
     title: 'सामाजिक तथा जीवनोपयोगी शिक्षाको अवधारणा',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'सामाजिक तथा जीवनोपयोगी शिक्षाको अवधारणा',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(11).pdf'
@@ -103,7 +103,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_2',
     title: 'जीवनोपयोगी सिपका रूपमा डिजिटल सिपहरू तथा सामान्य अनुसन्धान सिपहरू',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'जीवनोपयोगी सिपका रूपमा डिजिटल सिपहरू तथा सामान्य अनुसन्धान सिपहरू',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(9).pdf'
@@ -111,7 +111,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_3',
     title: 'जीवनोपयोगी सिप',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'जीवनोपयोगी सिप',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(10).pdf'
@@ -119,7 +119,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_4',
     title: 'समाजको विकास र दर्शन',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'समाजको विकास र दर्शन',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(8).pdf'
@@ -127,7 +127,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_5',
     title: 'भूगोल र सामाजिक जीवन',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'भूगोल र सामाजिक जीवन',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(6).pdf'
@@ -135,7 +135,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_6',
     title: 'नेपालको इतिहास',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'नेपालको इतिहास',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(7).pdf'
@@ -143,7 +143,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_7',
     title: 'सामाजिक पहिचान र विविधता',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'सामाजिक पहिचान र विविधता',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(5).pdf'
@@ -151,7 +151,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_8',
     title: 'संविधान र नागरिक सचेतना',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'संविधान र नागरिक सचेतना',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(4).pdf'
@@ -159,7 +159,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_9',
     title: 'सहरीकरण र बसाइसराइ',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'सहरीकरण र बसाइसराइ',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(3).pdf'
@@ -167,7 +167,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_10',
     title: 'अर्थतन्त्र र विकास',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'अर्थतन्त्र र विकास',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(2).pdf'
@@ -175,7 +175,7 @@ export const socialStudiesNotes12: Note[] = [
   {
     id: 'social12_11',
     title: 'शिक्षा र सामाजिक विकास',
-    subject: 'social-studies',
+    subject: 'social',
     grade: 12,
     chapter: 'शिक्षा र सामाजिक विकास',
     url: 'https://zduohwulyilqfngqumyt.supabase.co/storage/v1/object/public/admin-upload/Class%2012/social/1%20(1).pdf'
